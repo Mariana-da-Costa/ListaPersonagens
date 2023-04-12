@@ -28,3 +28,5 @@ object Authenticator {
 //e implementamos a mesma nos objetos, elas continuam dependendo apenas de métodos que de fato irão
 //utilizar.
 //Melhora a manutenabilidade. Implementa o pilar da herança quando herda os métodos da interface.
+//Quando não declaramos os detalhes do método na interface, e sim os detalhes são aplicados na
+//implementação do método, garantimos o Princípio da Inversão de Dependência.
