@@ -27,3 +27,4 @@ object Authenticator {
 //Usando o princípio da Segregação de Interfaces, separamos a função login dentro de uma interface
 //e implementamos a mesma nos objetos, elas continuam dependendo apenas de métodos que de fato irão
 //utilizar.
+//Melhora a manutenabilidade. Implementa o pilar da herança quando herda os métodos da interface.

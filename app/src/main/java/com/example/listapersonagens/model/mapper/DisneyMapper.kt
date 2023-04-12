@@ -2,7 +2,6 @@ package com.example.listapersonagens.model.mapper
 
 import com.example.listapersonagens.model.domain.Character
 import com.example.listapersonagens.model.api.DisneyCharacter
-import com.example.listapersonagens.model.api.RickyAndMortyCharacter
 
 //Depois
 //Aplicando o princípio da responsabilidade única, fazendo com que exista uma classe para cada
@@ -11,7 +10,9 @@ import com.example.listapersonagens.model.api.RickyAndMortyCharacter
 //Aplicando o princípio aberto/fechado, foi criada uma interface ICharactersMapper, onde cada classe
 //poderá implementar essa interface que define o método para criar a lista de personagens.
 //Também foi utilizado o Princípio da Segregação de Interfaces, ao criar a interface ICharactersMapper,
-//as classes estão implementando apenas métodos que estão utilizando
+//as classes estão implementando apenas métodos que estão utilizando.
+//Facilita a manutenção do código e usa os pilares de herança e polimorfismo, quando aplica os métodos
+//da interface que permite transformar um objeto com as características de outro.
 
 class DisneyMapper: ICharactersMapper<DisneyCharacter> {
     override fun transform(apiCharacters: List<DisneyCharacter>): List<Character> {

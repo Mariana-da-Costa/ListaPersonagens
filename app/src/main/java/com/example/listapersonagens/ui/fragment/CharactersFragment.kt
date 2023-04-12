@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.listapersonagens.R
 import com.example.listapersonagens.databinding.FragmentCharactersBinding
-import com.example.listapersonagens.model.domain.CharacterType.DISNEY
-import com.example.listapersonagens.model.domain.CharacterType.RICKY_AND_MORTY
+import com.example.listapersonagens.model.domain.Disney
+import com.example.listapersonagens.model.domain.RickAndMorty
 import com.example.listapersonagens.model.mapper.DisneyMapper
 import com.example.listapersonagens.model.mapper.RickAndMortyMapper
 import com.example.listapersonagens.network.service.DisneyService
@@ -69,12 +69,12 @@ class CharactersFragment : Fragment() {
                     R.id.rbCharacterTypeDisney -> {
                         CoroutineScope(Dispatchers.IO).launch(Dispatchers.Main) {
                             pbLoadingCharacters.visible()
-                            tvCharactersTypeTitle.text = DISNEY.title
+                            tvCharactersTypeTitle.text = Disney.title
                             llCharactersTypeHeader.background = AppCompatResources.getDrawable(
                                 requireContext(),
-                                DISNEY.colorRes
+                                Disney.colorRes
                             )
-                            setupGlide(DISNEY.imageUrl)
+                            setupGlide(Disney.imageUrl)
                             val disneyCharacters = disneyService.getCharacters()
                             val transformedDisneyList =
                                 DisneyMapper().transform(disneyCharacters.data)
@@ -84,12 +84,12 @@ class CharactersFragment : Fragment() {
                     R.id.rbCharacterTypeRickyAndMorty -> {
                         CoroutineScope(Dispatchers.IO).launch(Dispatchers.Main) {
                             pbLoadingCharacters.visible()
-                            tvCharactersTypeTitle.text = RICKY_AND_MORTY.title
+                            tvCharactersTypeTitle.text = RickAndMorty.title
                             llCharactersTypeHeader.background = AppCompatResources.getDrawable(
                                 requireContext(),
-                                RICKY_AND_MORTY.colorRes
+                                RickAndMorty.colorRes
                             )
-                            setupGlide(RICKY_AND_MORTY.imageUrl)
+                            setupGlide(RickAndMorty.imageUrl)
                             val rickyAndMortyCharacters = rickyAndMortyService.getCharacters()
                             val transformedRickList =
                                 RickAndMortyMapper().transform(rickyAndMortyCharacters.results)
@@ -102,7 +102,8 @@ class CharactersFragment : Fragment() {
     }
 
 //Foram criadas as classes abaixo para melhorar a manutenabilidade do código e separa as responsabilidades
-//das funções, usando o princípio da responsabilidade única
+//das funções, usando o princípio da responsabilidade única. Segue o pilar do encapsulamento da POO.
+//Pela classe extender de Fragment(), ela segue o pilar da herança da POO
 
     private fun setupGlide(type: String){
         Glide.with(binding.root)
