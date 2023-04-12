@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.listapersonagens.R
 import com.example.listapersonagens.databinding.FragmentLoginBinding
-import com.example.listapersonagens.network.authentication.FirebaseAuthenticator
-
+import com.example.listapersonagens.network.authentication.Authenticator
 
 class LoginFragment : Fragment() {
     
@@ -38,7 +37,7 @@ class LoginFragment : Fragment() {
     private fun setupView() {
         with(binding) {
             btnLogin.setOnClickListener {
-                val isLoggedIn = FirebaseAuthenticator.login(tietEmail.text.toString(), tietPassword.text.toString())
+                val isLoggedIn = Authenticator.Firebase.login(tietEmail.text.toString(), tietPassword.text.toString())
                 if (isLoggedIn)
                     findNavController().navigate(R.id.action_loginFragment_to_charactersFragment)
                 else
