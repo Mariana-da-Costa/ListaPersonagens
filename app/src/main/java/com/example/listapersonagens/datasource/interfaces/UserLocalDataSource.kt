@@ -1,4 +1,4 @@
-package com.example.listapersonagens.datasource
+package com.example.listapersonagens.datasource.interfaces
 
 import com.example.listapersonagens.model.domain.User
 
