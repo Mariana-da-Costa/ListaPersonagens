@@ -36,4 +36,9 @@ object Auth {
         override fun login(email: String, password: String): Boolean =
             registeredUsers.any { it.email == email && it.password == password }
     }
+
+//Ao utilizar objetos, estamos utilizando o padrão Singleton como padrão criacional,
+//assim podemos utilizar esse objetos em qualquer lugar do código,
+//O object também garante que não exista mais de uma instância para essa classe, além
+//de podermos estender de outras classes, e implementar interfaces...
 }

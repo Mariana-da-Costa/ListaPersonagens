@@ -56,4 +56,7 @@ class CharactersAdapter :
     override fun onBindViewHolder(holder: CharactersViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
+
+    //Está sendo utilizado o adapter como design pattern estrutural
+    //Ele possibilita a adaptação de um objeto para ser possível sua exibição pelo recycler view
 }
