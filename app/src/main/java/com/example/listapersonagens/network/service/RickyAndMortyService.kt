@@ -1,11 +1,9 @@
 package com.example.listapersonagens.network.service
 
-import com.example.listapersonagens.model.api.RickyAndMortyCharacters
+import com.example.listapersonagens.model.response.RickyAndMortyResult
 import retrofit2.http.GET
 
 interface RickyAndMortyService {
-    
     @GET("character")
-    suspend fun getCharacters(): RickyAndMortyCharacters
-    
+    suspend fun getCharacters(): RickyAndMortyResult
 }
